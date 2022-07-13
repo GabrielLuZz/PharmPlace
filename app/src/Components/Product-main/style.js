@@ -13,7 +13,7 @@ export const StyledProductMain = styled.main`
     height: 850px;
     margin: 30px 0px;
     overflow: auto;
-    
+
     background-color: var(--white);
     display: flex;
     flex-wrap: wrap;

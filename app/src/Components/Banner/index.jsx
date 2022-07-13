@@ -11,10 +11,10 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./swiper.css";
 
-const BannerArea = (route) => {
+const BannerArea = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    return navigate(route);
+    return navigate("/login");
   };
 
   const defaultOptions = {
@@ -60,10 +60,7 @@ const BannerArea = (route) => {
             </section>
             <section className="text_three">
               <p>Cadastro simplificado e gratuito</p>
-              <button
-                onClick={() => handleClick("/registerSeller")}
-                className="button_visit"
-              >
+              <button onClick={handleClick} className="button_visit">
                 Cadastrar
               </button>
             </section>
@@ -90,10 +87,7 @@ const BannerArea = (route) => {
             </section>
             <section className="text_three">
               <p>Faça seu cadastro e não perca</p>
-              <button
-                onClick={() => handleClick("/registerUser")}
-                className="button_visit"
-              >
+              <button onClick={handleClick} className="button_visit">
                 Cadastrar
               </button>
             </section>
@@ -123,10 +117,7 @@ const BannerArea = (route) => {
             </section>
             <section className="text_three">
               <p>Cadastro simplificado e gratuito</p>
-              <button
-                onClick={() => handleClick("/registerUser")}
-                className="button_visit"
-              >
+              <button onClick={handleClick} className="button_visit">
                 Cadastrar
               </button>
             </section>
