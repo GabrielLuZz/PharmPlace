@@ -4,8 +4,11 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Providers/Auth";
 
 export default function MenuPopupState() {
+  const {setAuth} = React.useContext(AuthContext)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -25,6 +28,7 @@ export default function MenuPopupState() {
 
     if (isTrue) {
       localStorage.clear();
+      setAuth(false)
     }
   };
 

@@ -18,8 +18,6 @@ const Cart = () => {
     return acc + price * item.quantity;
   }, 0);
 
-  console.log(cart);
-
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "rigth" || anchor === "bottom" ? "auto" : 380 }}
@@ -53,8 +51,34 @@ const Cart = () => {
         </div>
         <div className="cartInfo">
           <div className="valorTotal">
-            <p>Valor Total: </p>
-            <p>R$ {formatPrice(amountPrice)}</p>
+            <div>
+              <p>Valor Pedido: </p>
+              <p>{formatPrice(amountPrice)}</p>
+            </div>
+
+            {amountPrice > 100 ? (
+              <div className="frete0">
+                <div>
+                  <p>Valor frete:</p>
+                  <span>R$ 0,00</span>
+                </div>
+                <div>
+                  <p>Valor total: </p>
+                  <span>{formatPrice(amountPrice)}</span>
+                </div>
+              </div>
+            ) : (
+              <div className="frete">
+                <div>
+                  <p>Valor frete:</p>
+                  <span>R$ 15,00</span>
+                </div>
+                <div>
+                  <p>Valor total:</p>
+                  <span>{formatPrice(amountPrice + 15)}</span>
+                </div>
+              </div>
+            )}
           </div>
           <div className="finalizar">
             <Payment />

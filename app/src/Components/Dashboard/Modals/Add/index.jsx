@@ -29,7 +29,7 @@ const ModalAdd = () => {
 
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório").min(4),
-    /* price: yup.string().required("Campo obrigatório"), */
+    price: yup.number().required("Campo obrigatório"),
     image: yup.string().required("Campo obrigatório"),
     category: yup.string().required("Campo obrigatório"),
   });
@@ -83,7 +83,7 @@ const ModalAdd = () => {
             />
             <span className="error">{errors.name?.message}</span>
             <label htmlFor="">Preço</label>
-            <input type="number" placeholder="R$ 5.99" {...register("price")} />
+            <input type="text" placeholder="R$ 5.99" {...register("price")} />
             <span className="error">{errors.price?.message}</span>
 
             <label htmlFor="">Imagem</label>

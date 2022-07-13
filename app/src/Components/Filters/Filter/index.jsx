@@ -55,7 +55,7 @@ const SearchFilter = ({ data, set }) => {
       </section>
 
       <section
-        onClick={() => filterWithCategory("Dermocosmeticos", data, set)}
+        onClick={() => filterWithCategory("dermocosmeticos", data, set)}
         className="filter"
       >
         <div className="icon">

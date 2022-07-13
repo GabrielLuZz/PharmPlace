@@ -11,6 +11,7 @@ import { createTheme } from "@mui/material/styles";
 import api from "../../../../services/api";
 import { toast } from "react-toastify";
 import { ProductsContext } from "../../../../Providers/products";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -102,7 +103,7 @@ const ModalEdit = ({ product: { id, name, category, image, price } }) => {
             <input type="text" defaultValue={name} {...register("name")} />
             <span className="error">{errors.name?.message}</span>
             <label htmlFor="">Preço</label>
-            <input defaultValue={price} type="number" {...register("price")} />
+            <input defaultValue={price} type="text" {...register("price")} />
             <span className="error">{errors.price?.message}</span>
 
             <label htmlFor="">Imagem</label>

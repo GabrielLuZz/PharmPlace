@@ -78,10 +78,28 @@ export const StyledCart = styled.section`
 
     .valorTotal {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       color: black;
       font-weight: 700;
       font-size: 1.1rem;
+      gap: 5px;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .frete0 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .frete {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
     }
 
     button {

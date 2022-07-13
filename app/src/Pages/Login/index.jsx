@@ -8,8 +8,13 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FiAlertCircle } from "react-icons/fi";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/Auth";
 
 const Login = () => {
+  const { auth, setAuth } = useContext(AuthContext);
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -17,6 +22,12 @@ const Login = () => {
       .email("Tipo de email inválido"),
     password: yup.string().required("Senha obrigatória"),
   });
+
+  useEffect(() => {
+    if (auth) {
+      return navigate("/");
+    }
+  }, [auth]);
 
   const {
     register,
@@ -33,6 +44,7 @@ const Login = () => {
         toast.success("Seja bem vindo");
         localStorage.setItem("@userToken", resp.data.accessToken);
         localStorage.setItem("@userData", JSON.stringify(resp.data.user));
+        setAuth(true);
         resp.data.user.isPharmacy ? navigate("/dashboard") : navigate("/");
       })
       .catch((error) => {

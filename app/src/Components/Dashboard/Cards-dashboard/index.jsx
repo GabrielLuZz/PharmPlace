@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const CardsDashboard = () => {
-  const id = JSON.parse(localStorage.getItem("@userData")).id;
+  const id = JSON.parse(localStorage.getItem("@userData"))?.id;
   const { products } = useContext(ProductsContext);
   const pharmaProducts = products.filter(({ userId }) => userId === id);
   useEffect(() => {
