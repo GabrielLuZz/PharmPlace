@@ -5,7 +5,7 @@ import Header from "../../Components/Header";
 import { Identify, ProductList } from "./style";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../Providers/products";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard";
 import { UsersContext } from "../../Providers/users";
 
